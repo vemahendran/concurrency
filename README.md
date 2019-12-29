@@ -1,6 +1,6 @@
 # concurrency
 
-### Quick check on performance of CompletableFuture and Parallel Stream
+### A quick check on performance of CompletableFuture and Parallel Stream
 
 In my recent project, I had to improve the performance of existing java application. The application was written on plain java. It doesn't use any frameworks (e.g. Spring). The app was primarily written for infra purposes like handling Kubernetes workloads. Most of the time, the app is making hundreds of API calls to [Kubernetes API](https://github.com/kubernetes-client/java/) server and process the json payloads. Some of the api calls and the processing tasks can be run independently.
 
@@ -238,6 +238,6 @@ Processed 1000 tasks in 93246 milliseconds
 
 Phew! It merely takes one second to complete thousand tasks. It's obvious that `CompletableFutures` gives more power to developer for handling threads. Both of the implementations internally use `ForkJoinPool`. In terms of easy of use, parallel stream looks very handy for running tasks which are less than hundred.
 
-All the sample code can be referred in my [github]().
+All the sample code can be referred in my [github](https://github.com/vemahendran/concurrency/tree/master/src/main/java/com/concurrency).
 
 I hope you've found this post useful. In the next post, we will see more about `CompletableFutures`, `Executors`, and Google's [Guava](https://github.com/google/guava) concurrent features. Thanks!

@@ -12,8 +12,8 @@ public class TestConcurrency {
 	public static void main(String[] args) {
 
 		List<MyTask> tasks = IntStream.range(0, MAX_TASKS)
-									.mapToObj(i -> new MyTask(SECONDS))
-									.collect(Collectors.toList());
+					.mapToObj(i -> new MyTask(SECONDS))
+					.collect(Collectors.toList());
 
 		Concurrency concurrency = new ConcurrencyImpl();
 
